@@ -1,0 +1,42 @@
+<%- include('../plantillas/cabeza.ejs'); %>
+
+    <div class="row align-content-center justify-content-center vh-100 ">
+        <div class="col-auto rounded p-1">
+
+            <div class="row">
+                <h1 class="text-light">
+                    Inicio de sesion
+                </h1>
+            </div>
+
+            <div class="row rounded p-1" style="border:1px solid black;">
+
+                <form action="inicio-sesion" method="post" style="height: 400px; width: 300px;">
+
+                    <div class="row form-group m-1">
+                        <div class="row">
+                            <label class="text-light">usuario</label>
+                        </div>
+                        <div class="row">
+                            <input type="text" class="form-control" name="user" id="user">
+                        </div>
+                    </div>
+
+                    <div class="row form-group m-1">
+                        <div class="row">
+                            <label class="row text-light">contraseña</label>
+                        </div>
+                        <div class="row">
+                            <input type="row password" class="form-control" name="pass">
+                        </div>
+                    </div>
+
+                    <div class="row position-relative">
+                        <input type="submit" class="btn btn-primary position-relative start-50 translate-middle">
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('../plantillas/pie.ejs'); %>

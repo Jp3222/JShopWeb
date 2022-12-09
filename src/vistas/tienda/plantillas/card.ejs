@@ -1,0 +1,32 @@
+<div class="col">
+    <div class="card mt-3" style="width: 18rem;">
+        <img src="/img/TenisSK.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+            <div class="row">
+                <h5 class="card-title">Tenis - <%=data[i].nombre%></h5>
+            </div>
+            <div class="row">
+                <h6 class="card-subtitle">
+                    Marca: <%=data[i].marca%>
+                </h6>
+                <h6>
+                    Talla:<%=data[i].talla%>
+                </h6>
+                <p class="card-text">
+                    <%=data[i].Descripcion%>
+                </p>
+                <h6>
+                    Precio: <%=data[i].precio%>
+                </h6>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <a href="Tienda/Productos/:<%= data[i].id%>" class="btn btn-primary">Ver producto</a>
+                </div>
+                <div class="col">
+                    <%- include('./plantillas/addCarrito');%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

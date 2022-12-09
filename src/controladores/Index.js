@@ -1,6 +1,7 @@
 const index = {}
 const db_nombre = 'tenis'
 const db_columnas = ['nombre', 'modelo', 'marca', 'talla', 'precio', 'Descripcion']
+const pool = require('../modelo/db')
 
 index.add = (req, res) => {
     req.getConnection((err, conn) => {
@@ -18,7 +19,7 @@ index.listAll = (req, res) => {
             res.json(err)
         }
         let query = 'select * from ' + db_nombre
-        conn.query(query, (err, row) => {
+       const {row} = await conn.query(query, async (err, row) => {
             if (err) {
                 res.json(err)
             }
@@ -39,8 +40,6 @@ index.listAll = (req, res) => {
                     data: lista
                 })
             })
-
-
         })
     })
 }

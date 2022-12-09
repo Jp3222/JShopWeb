@@ -10,4 +10,8 @@ usuarios.getUsuario = (req, res) => {
     })
 }
 
+usuario.get = (req, res)={
+    res.render()
+}
+
 module.exports = usuarios;

@@ -9,17 +9,23 @@ class Sesion {
         this.pass = null
     }
 
-    set setUser(obj = this.modelo) {
-        this.modulo = obj
+    setUser(user, pass) {
+        this.user = user
+        this.pass = pass
     }
 
-    removeUser(){
-        this.modulo.user = null
-        this.modelo.pass = null
-    } 
+    removeUser() {
+        if (this.user != null && this.pass != null) {
+            this.user = null
+            this.pass = null
+        }
+    }
 
     sesionActiva() {
-        return this.user != null && this.pass != null
+        if ((this.user != null) && (this.pass != null)) {
+            return true
+        }
+        return false
     }
 }
 

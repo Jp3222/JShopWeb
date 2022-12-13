@@ -1,4 +1,4 @@
-//npm i express morgan mysql express-myconnection ejs
+//npm i express morgan mysql express-myconnection ejs mysql2
 //npm i nodemon -D
 const express = require('express')
 const morgan = require('morgan')
@@ -9,6 +9,7 @@ const myConnection = require('express-myconnection')
 const path = require('path')
 const app = express()
 const port = 3000
+const xml = require('./src/controladores/util/conn')
 //
 const rutas = require('./src/modelo/rutas')
 
@@ -27,6 +28,10 @@ app.use(myConnection(mysql, {
     database: 'db_jshop'
 }, 'single'))
 
+xml.setStruc('XML',(lista, str) => {
+    let x = str.read();
+    lista.add(str)
+})
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }));
 app.use('/', rutas)

@@ -1,7 +1,6 @@
 class Carrito {
 
     constructor() {
-        console.log('new car')
         this.modelo = {
             id: String,
             nombre: String,
@@ -17,7 +16,7 @@ class Carrito {
         if (repetido == -1) {
             this.lista.push(obj)
         } else {
-            this.lista[repetido].cantidad += obj.cantidad 
+            this.lista[repetido].cantidad += parseInt(obj.cantidad) 
         }
     }
 
@@ -34,7 +33,7 @@ class Carrito {
         let total = 0.0
         while (this.lista.length > 0) {
             let aux =  this.lista.shift()
-            total += (aux.cantidad * aux.consto)
+            total += (parseFloat(aux.cantidad) * parseFloat(aux.consto))
         }
     }
 
